@@ -1,0 +1,11 @@
+{
+    "extends": "@directus/tsconfig/node18-esm",
+    "compilerOptions": {
+        "outDir": "extensions",
+        "verbatimModuleSyntax": false
+    },
+    "include": ["src"],
+    "ts-node": {
+        "esm": true
+    }
+}
