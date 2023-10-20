@@ -11,7 +11,9 @@
     "build": "tsc --project tsconfig.prod.json && copyfiles \"src/**/*.{yaml,liquid}\" -u 1 ./extensions",
     "build:watch": "tsc --watch --preserveWatchOutput && copyfiles \"src/**/*.{yaml,liquid}\" -u 1 ./extensions",
     "dev": "cross-env NODE_ENV=development SERVE_APP=true npm run build:watch | nodemon",
-    "test": "vitest --watch=false"
+    "test": "vitest --watch=false",
+    "snapshot:create": "npx directus schema snapshot ./snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml",
+    "snapshot:restore": "npx directus schema apply ./snapshots/\"$(ls -t ./snapshots | head -1)\""
   },
   "dependencies": {
     "mysql": "^2.18.1",
@@ -30,7 +32,13 @@
     "@types/node": "^20.4.5",
     "copyfiles": "2.4.1",
     "cross-env": "^7.0.3",
-    "typescript": "5.0.4"
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "5.2.2",
+    "vitest": "^0.34.6",
+    "vue": "^3.3.4"
   },
   "engines": {
     "node": ">=18.0.0"

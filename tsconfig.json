@@ -1,11 +1,14 @@
 {
-    "extends": "@directus/tsconfig/node18-esm",
-    "compilerOptions": {
-        "outDir": "extensions",
-        "verbatimModuleSyntax": false
-    },
-    "include": ["src"],
-    "ts-node": {
-        "esm": true
-    }
+  "extends": "@directus/tsconfig/node18-esm",
+  "compilerOptions": {
+    "outDir": "extensions",
+    "verbatimModuleSyntax": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "module": "NodeNext"
+  },
+  "include": ["src"],
+  "ts-node": {
+    "esm": true
+  }
 }
