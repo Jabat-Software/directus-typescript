@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.prod.json && copyfiles \"src/**/*.{yaml,liquid}\" -u 1 ./extensions",
     "build:watch": "tsc --watch --preserveWatchOutput && copyfiles \"src/**/*.{yaml,liquid}\" -u 1 ./extensions",
-    "dev": "cross-env NODE_ENV=development SERVE_APP=true npm run build:watch | nodemon",
+    "start": "cross-env NODE_ENV=development SERVE_APP=true npm run build:watch | nodemon",
     "test": "vitest --watch=false",
     "snapshot:create": "npx directus schema snapshot ./snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml",
     "snapshot:restore": "npx directus schema apply ./snapshots/\"$(ls -t ./snapshots | head -1)\"",
