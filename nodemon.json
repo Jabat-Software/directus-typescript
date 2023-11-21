@@ -4,6 +4,6 @@
   "exec": "ts-node ./src/start.ts",
   "delay": 500,
   "events": {
-    "start": "mkdir -p ./api && cp -r -f ./src/views ./extensions"
+    "start": "mkdir -p ./extensions && cp -r -f ./src/views ./extensions"
   }
 }
