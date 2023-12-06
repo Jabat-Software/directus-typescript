@@ -1,0 +1,20 @@
+{
+  "apps": [
+    {
+      "name": "directus-prod",
+      "namespace": "directus",
+      "script": "npm",
+      "args": "run start:prod",
+      "watch": true,
+      "ignore_watch": ["node_modules", "logs", "uploads", "temp"]
+    },
+    {
+      "name": "directus-dev",
+      "namespace": "directus",
+      "script": "npm",
+      "args": "run start:dev",
+      "watch": true,
+      "ignore_watch": ["node_modules", "logs", "uploads", "temp"]
+    }
+  ]
+}

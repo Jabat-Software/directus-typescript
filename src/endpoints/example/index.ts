@@ -1,10 +1,11 @@
 import { ItemsService } from '@directus/api/services/items';
-import { EndpointExtensionContext, User } from '@directus/types';
+import { User } from '@directus/types';
 import { respond } from '@directus/api/middleware/respond';
 import asyncHandler from '@directus/api/utils/async-handler';
 import { NextFunction, Request, Response, Router } from 'express';
+import { RegisterEndpointFunctions } from '../../types/directus.js';
 
-export default (router: Router, context: EndpointExtensionContext) => {
+export default (router: Router, context: RegisterEndpointFunctions) => {
   router.get(
     '/',
     asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
@@ -13,6 +14,6 @@ export default (router: Router, context: EndpointExtensionContext) => {
       res.locals['payload'] = { data: user };
       return next();
     }),
-    respond
+    respond,
   );
 };
